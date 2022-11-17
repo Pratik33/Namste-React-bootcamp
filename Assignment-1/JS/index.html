@@ -8,9 +8,15 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
-    <title>React Bootcamp - 1</title>
+    <title>React - Bootcamp</title>
   </head>
   <body>
-    Hello World !
+    <div id="root"></div>
+    <script>
+      const root = document.getElementById('root');
+      const heading = document.createElement('h1');
+      heading.innerText = 'Hello World !';
+      root.appendChild(heading);
+    </script>
   </body>
 </html>
