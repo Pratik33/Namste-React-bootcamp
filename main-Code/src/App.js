@@ -1,38 +1,9 @@
 import Header from './Components/header/Header';
 import Projects from './Components/Projects/Projects';
+import data from './data.json';
 export function App() {
-  const navItems = [
-    { _id: 1, title: 'Home', link: './home' },
-    { _id: 2, title: 'About us', link: './aboutus' },
-  ];
-  const assignmentLinks = [
-    {
-      _id: 1,
-      title: '01-Inception',
-      gitHubLink:
-        'https://github.com/Pratik33/Namste-React-bootcamp/tree/master/01-Inception',
-      liveDemoLink: '#',
-    },
-    {
-      _id: 2,
-      title: '02-Igniting the App',
-      gitHubLink:
-        'https://github.com/Pratik33/Namste-React-bootcamp/tree/master/02-Igniting%20the%20app',
-      liveDemoLink: '#',
-    },
-    {
-      _id: 3,
-      title: '03-Laying the foundation',
-      gitHubLink: '#',
-      liveDemoLink: '#',
-    },
-    {
-      _id: 4,
-      title: '04-Talk is Cheap, show me the code !',
-      gitHubLink: '#',
-      liveDemoLink: '#',
-    },
-  ];
+  const navItems = data.Navbar;
+  const assignmentLinks = data.assignmentLinks;
   return (
     <div>
       <Header navItems={navItems}></Header>
