@@ -1,7 +1,8 @@
 {
   "Navbar": [
-    { "_id": 1, "title": "Home", "link": "./home" },
-    { "_id": 2, "title": "About us", "link": "./aboutus" }
+    { "id": 1, "title": "Home", "link": "./home" },
+    { "id": 2, "title": "Projects", "link": "./projects" },
+    { "id": 3, "title": "Blogs", "link": "./projects" }
   ],
   "assignmentLinks": [
     {

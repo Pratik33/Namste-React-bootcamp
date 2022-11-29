@@ -1,9 +1,10 @@
 import React from 'react';
+import './Header.css';
 
 function Header({ navItems }) {
   let navItemList = navItems.map((navItem) => {
     return (
-      <li className='nav-item active'>
+      <li className='nav-item mx-2'>
         <a
           className='nav-link'
           href='#'>
@@ -13,11 +14,11 @@ function Header({ navItems }) {
     );
   });
   return (
-    <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+    <nav className='navbar navbar-expand-lg navbar-light header-background header'>
       <a
         className='navbar-brand'
         href='#'>
-        Pratik Mothe
+        <strong>Pratik Mothe</strong>
       </a>
       <button
         className='navbar-toggler'
@@ -32,7 +33,7 @@ function Header({ navItems }) {
       <div
         className='collapse navbar-collapse'
         id='navbarNav'>
-        <ul className='navbar-nav'>{navItemList}</ul>
+        <ul className='navbar-nav ml-auto mr-4'>{navItemList}</ul>
       </div>
     </nav>
   );
