@@ -1,4 +1,4 @@
-h1 {
-  color: hotpink;
-  font-family: cursive;
+:root {
+  --primaryColor: #fca311;
+  --secondaryColor: #e3d5ca;
 }

@@ -1,0 +1,9 @@
+:root {
+  --primaryColor: #ffbe0b;
+}
+.header-background {
+  background-color: var(--primaryColor);
+}
+.header {
+  height: 5rem;
+}

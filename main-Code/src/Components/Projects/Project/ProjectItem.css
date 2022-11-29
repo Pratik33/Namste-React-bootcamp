@@ -1,0 +1,13 @@
+:root {
+  --primaryColor: #ffbe0b;
+  --text-primary: #000000;
+  --secondaryColor: #e3d5ca;
+}
+.projectItem .btn-primary {
+  background-color: var(--primaryColor);
+  border-color: var(--primaryColor);
+}
+
+.projectItem .text-color {
+  color: var(--text-primary);
+}
