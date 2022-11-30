@@ -29,5 +29,6 @@
       "gitHubLink": "#",
       "liveDemoLink": "#"
     }
-  ]
+  ],
+  "pageTitle": [{ "project": "The Project Section" }]
 }
