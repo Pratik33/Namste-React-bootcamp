@@ -1,6 +1,3 @@
-:root {
-  --primaryColor: #ffbe0b;
-}
 .header-background {
   background-color: var(--primaryColor);
 }
