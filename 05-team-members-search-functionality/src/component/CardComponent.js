@@ -25,21 +25,21 @@ const CardComponent = ({ user }) => {
             <a
               target='blank'
               href={github}>
-              <i class='fa-brands fa-github'></i>
+              <i className='fa-brands fa-github'></i>
             </a>
           </div>
           <div className='col-4 m-auto'>
             <a
               target='blank'
               href={linkedin}>
-              <i class='fa-brands fa-twitter'></i>
+              <i className='fa-brands fa-twitter'></i>
             </a>
           </div>
           <div className='col-4 m-auto'>
             <a
               target='blank'
               href={linkedin}>
-              <i class='fa-brands fa-linkedin '></i>
+              <i className='fa-brands fa-linkedin '></i>
             </a>
           </div>
         </div>
