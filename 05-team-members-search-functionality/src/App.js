@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import React from 'react';
+import React, { useState } from 'react';
 
 import './index.css';
 import Images from './assets/images.js';
@@ -90,8 +90,8 @@ let data = [
   },
 ];
 
-const CardHolder = () => {
-  return data.map((user) => {
+const CardHolder = ({ filteredTeam }) => {
+  return filteredTeam.map((user) => {
     return (
       <CardComponent
         user={user}
@@ -102,12 +102,16 @@ const CardHolder = () => {
 };
 
 const AppLayoutComponent = () => {
+  const [filteredTeam, setFilteredTeam] = useState(data);
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent
+        data={data}
+        setFilteredTeam={setFilteredTeam}
+      />
       <div className='container'>
         <div className='row'>
-          <CardHolder />
+          <CardHolder filteredTeam={filteredTeam} />
         </div>
       </div>
     </>

@@ -1,4 +1,5 @@
-const NavbarComponent = () => {
+import SearchComponent from './SearchComponent';
+const NavbarComponent = ({ data, setFilteredTeam }) => {
   return (
     <nav className='navbar navbar-light '>
       <a
@@ -6,13 +7,10 @@ const NavbarComponent = () => {
         href='#'>
         Web Pirates
       </a>
-      <div>
-        <input
-          type='text'
-          placeholder='searchbar'
-        />
-        <button className='btn btn-success'>Search</button>
-      </div>
+      <SearchComponent
+        data={data}
+        setFilteredTeam={setFilteredTeam}
+      />
     </nav>
   );
 };
