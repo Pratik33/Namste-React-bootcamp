@@ -15,7 +15,9 @@ const SearchComponent = ({ data, setFilteredList, setIsMemberPresent }) => {
       onSubmit={(e) => {
         e.preventDefault();
         const filteredList = searchLogin(searchKey, data);
-        filteredList.length > 0 ? setIsMemberPresent(true) : null;
+        filteredList.length === 0
+          ? setIsMemberPresent(false)
+          : setIsMemberPresent(true);
         setFilteredList(filteredList);
       }}>
       <input

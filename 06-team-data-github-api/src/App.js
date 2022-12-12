@@ -25,7 +25,7 @@ const CardHolder = ({ filteredTeam }) => {
 const AppLayoutComponent = () => {
   const [teamsList, setTeamsList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
-  const [isMemberPresent, setIsMemberPresent] = useState(false);
+  const [isMemberPresent, setIsMemberPresent] = useState(true);
   useEffect(() => {
     fetchData();
   }, []);
@@ -49,15 +49,15 @@ const AppLayoutComponent = () => {
       />
       <div className='container'>
         <div className='row'>
-          <CardHolder
-            filteredTeam={
-              filteredList.length === 0
-                ? teamsList
-                : filteredList.length > 0
-                ? filteredList
-                : []
-            }
-          />
+          {isMemberPresent ? (
+            <CardHolder
+              filteredTeam={
+                filteredList.length === 0 ? teamsList : filteredList
+              }
+            />
+          ) : (
+            <h1>Opps ! Something goes wrong</h1>
+          )}
         </div>
       </div>
     </>
