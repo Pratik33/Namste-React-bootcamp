@@ -1,5 +1,5 @@
 import SearchComponent from './SearchComponent';
-const NavbarComponent = ({ data, setFilteredTeam }) => {
+const NavbarComponent = ({ data, setFilteredList, setIsMemberPresent }) => {
   return (
     <nav className='navbar navbar-light '>
       <a
@@ -9,7 +9,8 @@ const NavbarComponent = ({ data, setFilteredTeam }) => {
       </a>
       <SearchComponent
         data={data}
-        setFilteredTeam={setFilteredTeam}
+        setFilteredList={setFilteredList}
+        setIsMemberPresent={setIsMemberPresent}
       />
     </nav>
   );
