@@ -13,9 +13,7 @@ const CardComponent = ({ user }) => {
   } = user;
   return (
     <div className='col-md-4 mt-2'>
-      <div
-        className='card'
-        style={{ width: '16rem' }}>
+      <div className='card'>
         <img
           className='card-img-top img-fluid rounded-circle p-2'
           src={avatar_url}

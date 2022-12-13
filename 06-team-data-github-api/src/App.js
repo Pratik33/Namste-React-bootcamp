@@ -3,32 +3,22 @@ import React, { useState, useEffect } from 'react';
 
 import './index.css';
 
-import CardComponent from './component/CardComponent';
 import NavbarComponent from './component/NavbarComponent';
-import gitUserNames from './util/Constant';
+import CardHolder from './component/CardHolder';
 
-const CardHolder = ({ filteredTeam }) => {
-  if (filteredTeam.length > 0) {
-    return filteredTeam.map((user) => {
-      if (user.login) {
-        return (
-          <CardComponent
-            user={user}
-            key={user.id}
-          />
-        );
-      }
-    });
-  }
-};
+import gitUserNames from './util/Constant';
 
 const AppLayoutComponent = () => {
   const [teamsList, setTeamsList] = useState([]);
+
   const [filteredList, setFilteredList] = useState([]);
+
   const [isMemberPresent, setIsMemberPresent] = useState(true);
+
   useEffect(() => {
     fetchData();
   }, []);
+
   async function fetchData() {
     const data = await Promise.all(
       gitUserNames.map(async (gitUserName) => {
@@ -51,12 +41,10 @@ const AppLayoutComponent = () => {
         <div className='row'>
           {isMemberPresent ? (
             <CardHolder
-              filteredTeam={
-                filteredList.length === 0 ? teamsList : filteredList
-              }
+              filteredTeam={filteredList.length ? filteredList : teamsList}
             />
           ) : (
-            <h1>Opps ! Something goes wrong</h1>
+            <h1>No result for this Search !</h1>
           )}
         </div>
       </div>
