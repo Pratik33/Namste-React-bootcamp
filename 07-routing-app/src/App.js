@@ -1,10 +1,11 @@
 import ReactDOM from 'react-dom/client';
 import React, { useState, useEffect } from 'react';
-
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import './index.css';
 
 import NavbarComponent from './component/NavbarComponent';
-import CardHolder from './component/CardHolder';
+import AboutUsComponent from './component/AboutUsComponent';
+import TeamMembersComponent from './component/TeamMembersComponent';
 
 import gitUserNames from './util/Constant';
 
@@ -40,18 +41,37 @@ const AppLayoutComponent = () => {
       <div className='container'>
         <div className='row'>
           {isMemberPresent ? (
-            <CardHolder
-              filteredTeam={filteredList.length ? filteredList : teamsList}
+            <TeamMembersComponent
+              filteredList={filteredList}
+              teamsList={teamsList}
             />
           ) : (
             <h1>No result for this Search !</h1>
           )}
         </div>
       </div>
+      <Outlet />
     </>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(<AppLayoutComponent />);
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <AppLayoutComponent />,
+    children: [
+      {
+        path: '/about',
+        element: <AboutUsComponent />,
+      },
+      {
+        path: '/home',
+        element: <TeamMembersComponent />,
+      },
+    ],
+  },
+]);
+
+root.render(<RouterProvider router={router} />);
