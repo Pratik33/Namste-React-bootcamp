@@ -1,17 +1,13 @@
+import { Link } from 'react-router-dom';
 import SearchComponent from './SearchComponent';
 const NavbarComponent = ({ data, setFilteredList, setIsMemberPresent }) => {
   return (
     <nav className='navbar navbar-light '>
-      <a
-        className='navbar-brand'
-        href='#'>
+      <Link
+        to={`team-members`}
+        className='navbar-brand'>
         Web Pirates
-      </a>
-      <SearchComponent
-        data={data}
-        setFilteredList={setFilteredList}
-        setIsMemberPresent={setIsMemberPresent}
-      />
+      </Link>
     </nav>
   );
 };

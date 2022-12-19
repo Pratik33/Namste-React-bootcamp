@@ -13,6 +13,7 @@ const SearchComponent = ({ data, setFilteredList, setIsMemberPresent }) => {
   const [searchKey, setSearchKey] = useState('');
   return (
     <form
+      className='searchForm'
       onSubmit={(e) => {
         e.preventDefault();
         const filteredList = searchLogin(searchKey, data);

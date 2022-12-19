@@ -16,3 +16,9 @@
   height: 3rem;
   width: 100%;
 }
+
+.searchForm {
+  position: absolute;
+  top: 10px;
+  left: 70vw;
+}
