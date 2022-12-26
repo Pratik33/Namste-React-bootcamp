@@ -1,0 +1,24 @@
+:root {
+  --primaryColor: #facc15;
+  --secondaryColor: #e3d5ca;
+  --offset-background: #f2f2f2;
+  --plain-background: #ffffff;
+}
+
+.navbar {
+  background-color: var(--primaryColor);
+}
+.card {
+  width: 16rem;
+}
+.cardFooter {
+  background-color: var(--primaryColor);
+  height: 3rem;
+  width: 100%;
+}
+
+.searchForm {
+  position: absolute;
+  top: 10px;
+  left: 70vw;
+}
