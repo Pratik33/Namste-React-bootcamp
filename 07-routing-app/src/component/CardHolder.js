@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import CardComponent from './CardComponent';
+import { Link } from "react-router-dom";
+import CardComponent from "./CardComponent";
 
 const CardHolder = ({ filteredTeam }) => {
   if (filteredTeam.length > 0) {
@@ -7,10 +7,7 @@ const CardHolder = ({ filteredTeam }) => {
       if (user.login) {
         return (
           <Link to={`${user.login}`}>
-            <CardComponent
-              user={user}
-              key={user.id}
-            />
+            <CardComponent user={user} key={user.id} />
           </Link>
         );
       }

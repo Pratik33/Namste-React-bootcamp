@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { useRouteError, useNavigate } from 'react-router-dom';
+import { useRouteError, useNavigate } from "react-router-dom";
 
 const ErrorElement = () => {
   const { statusText, message } = useRouteError();
@@ -10,7 +10,8 @@ const ErrorElement = () => {
       <button
         onClick={() => {
           navigate(-1);
-        }}>
+        }}
+      >
         Go Back
       </button>
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const searchLogin = (searchKey, data) => {
   return data.filter((team) => {
@@ -10,10 +10,10 @@ const searchLogin = (searchKey, data) => {
   });
 };
 const SearchComponent = ({ data, setFilteredList, setIsMemberPresent }) => {
-  const [searchKey, setSearchKey] = useState('');
+  const [searchKey, setSearchKey] = useState("");
   return (
     <form
-      className='searchForm'
+      className="searchForm"
       onSubmit={(e) => {
         e.preventDefault();
         const filteredList = searchLogin(searchKey, data);
@@ -21,16 +21,17 @@ const SearchComponent = ({ data, setFilteredList, setIsMemberPresent }) => {
           ? setIsMemberPresent(false)
           : setIsMemberPresent(true);
         setFilteredList(filteredList);
-      }}>
+      }}
+    >
       <input
-        type='text'
-        placeholder='Search ...'
+        type="text"
+        placeholder="Search ..."
         value={searchKey}
         onChange={(e) => {
           setSearchKey(e.target.value);
         }}
       />
-      <button className='btn btn-success'>Search</button>
+      <button className="btn btn-success">Search</button>
     </form>
   );
 };

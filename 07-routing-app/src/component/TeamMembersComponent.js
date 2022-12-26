@@ -1,10 +1,9 @@
-import CardHolder from './CardHolder';
-import SearchComponent from './SearchComponent';
+import CardHolder from "./CardHolder";
+import SearchComponent from "./SearchComponent";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import gitUserNames from '../util/Constant';
-import { Outlet } from 'react-router-dom';
+import gitUserNames from "../util/Constant";
 
 function TeamMembersComponent() {
   const [teamsList, setTeamsList] = useState([]);
