@@ -6,9 +6,12 @@ const CardHolder = ({ filteredTeam }) => {
     return filteredTeam.map((user) => {
       if (user.login) {
         return (
-          <Link to={`${user.login}`}>
-            <CardComponent user={user} key={user.id} />
-          </Link>
+          <div>
+            <h2>Hello 1</h2>
+            <Link key={user.login} to={`${user.login}`}>
+              <CardComponent user={user} key={user.id} />
+            </Link>
+          </div>
         );
       }
     });

@@ -16,9 +16,21 @@
   height: 3rem;
   width: 100%;
 }
-
-.searchForm {
-  position: absolute;
-  top: 10px;
-  left: 70vw;
+nav ul {
+  margin: 0;
+  padding: 0.5rem;
+  display: inline-block;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+nav li a {
+  text-decoration: none;
+  color: black;
+}
+nav li a:hover {
+  text-decoration: none;
+  color: black;
+  background-color: #e3d5ca;
 }

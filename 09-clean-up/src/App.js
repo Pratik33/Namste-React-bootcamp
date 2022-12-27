@@ -1,51 +1,58 @@
-import ReactDOM from 'react-dom/client';
-import React from 'react';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
-  index,
-} from 'react-router-dom';
-import './index.css';
+import ReactDOM from "react-dom/client";
+import React, { lazy, Suspense } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
 
-import NavbarComponent from './component/NavbarComponent';
-import AboutUsComponent from './component/AboutUsComponent';
-import TeamMembersComponent from './component/TeamMembersComponent';
-import TeamMemberDetails from './component/TeamMemberDetails';
-import ErrorElement from './component/ErrorElement';
+//import AboutUsComponent from "./component/AboutUsComponent";
+//import TeamMembersComponent from "./component/TeamMembersComponent";
+//import TeamMemberDetails from "./component/TeamMemberDetails";
+import ErrorElement from "./component/ErrorElement";
+import AppLayoutComponent from "./component/AppLayoutComponent";
+import Loading from "./component/LoadingComponent";
 
-const AppLayoutComponent = () => {
-  return (
-    <>
-      <NavbarComponent />
-      <div className='container'>
-        <div className='row'>
-          <Outlet />
-        </div>
-      </div>
-    </>
-  );
-};
+const AboutUsComponent = lazy(() => {
+  return import("./component/AboutUsComponent");
+});
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const TeamMembersComponent = lazy(() =>
+  import("./component/TeamMembersComponent")
+);
+
+const TeamMemberDetails = lazy(() => {
+  return import("./component/TeamMemberDetails");
+});
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <AppLayoutComponent />,
     errorElement: <ErrorElement />,
     children: [
       {
-        path: '/about',
-        element: <AboutUsComponent />,
+        path: "/about",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <AboutUsComponent />
+          </Suspense>
+        ),
       },
       {
-        path: '/team-members',
-        element: <TeamMembersComponent />,
+        path: "/team-members",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <TeamMembersComponent />
+          </Suspense>
+        ),
       },
       {
-        path: '/team-members/:teamMemberId',
-        element: <TeamMemberDetails />,
+        path: "/team-members/:teamMemberId",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <TeamMemberDetails />
+          </Suspense>
+        ),
       },
     ],
   },

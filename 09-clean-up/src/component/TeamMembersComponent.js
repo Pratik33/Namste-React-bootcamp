@@ -1,7 +1,7 @@
+import { useState, useEffect } from "react";
+
 import CardHolder from "./CardHolder";
 import SearchComponent from "./SearchComponent";
-
-import { useState, useEffect } from "react";
 
 import gitUserNames from "../util/Constant";
 
